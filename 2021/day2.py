@@ -1,14 +1,41 @@
 import utils
 
 def part_one(input):
-    return sum([1 for i in range(0, len(input) - 1) if input[i+1] > input[i]])
-    
+    distance = 0
+    depth = 0
+
+    for i in input:
+        direction, value = i.split(' ')
+        value = int(value)
+        if direction == 'forward':
+            distance += value
+        elif direction == 'down':
+            depth += value
+        if direction == 'up':
+            depth -= value
+
+    return distance * depth
 
 def part_two(input):
-    return sum([1 for i in range(0, len(input) - 2) if sum(input[i+1:i+4]) > sum(input[i:i+3])])
+    distance = 0
+    depth = 0
+    aim = 0
+    
+    for i in input:
+        direction, value = i.split(' ')
+        value = int(value)
+        if direction == 'forward':
+            distance += value
+            depth += value * aim
+        elif direction == 'down':
+            aim += value
+        if direction == 'up':
+            aim -= value
+
+    return distance * depth
 
 
-input = utils.read_input_int(2)
+input = utils.read_input(2)
 
 print(part_one(input))
 print(part_two(input))
