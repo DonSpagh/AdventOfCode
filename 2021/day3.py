@@ -1,8 +1,8 @@
 import utils
 
 def part_one(input):
-    gamma_rate = ""
-    epsilon_rate = ""
+    gamma_rate = ''
+    epsilon_rate = ''
     input_len = len(input)
     input_sums = [sum(i) for i in zip(*input)]
     for input_sum in input_sums:
@@ -38,7 +38,7 @@ def part_two(input):
             remaining_dioxygen = [value for value in remaining_dioxygen if value[i] == 0]
         i += 1
 
-    return int("".join(map(str, remaining_oxygen[0])), 2) * int("".join(map(str, remaining_dioxygen[0])), 2)
+    return int(''.join(map(str, remaining_oxygen[0])), 2) * int(''.join(map(str, remaining_dioxygen[0])), 2)
 
 
 input = utils.read_input_split_int(3)
