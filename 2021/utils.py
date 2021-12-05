@@ -1,5 +1,5 @@
 def read_input(day, input_type="str"):
-    with open(f'inputs/day{day}.txt') as f:
+    with open(f'inputs/day{day}.txt', 'r') as f:
         file_content = f.readlines()
         if input_type == "int":
             return [int(value) for value in file_content]
