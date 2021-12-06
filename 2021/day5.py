@@ -1,5 +1,4 @@
 import re
-import sys
 
 def read_input(day):
     with open(f'inputs/day{day}.txt', 'r') as f:
