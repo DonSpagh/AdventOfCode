@@ -12,17 +12,17 @@ def part_one(input):
 
 def part_two(input):
     score = 0
-    possible_letters = "abcdefg"
-    digits = ["abcefg", "cf", "acdeg", "acdfg", "bcdf", "abdfg", "abdefg", "acf", "abcdefg", "abcdfg"]
+    possible_letters = 'abcdefg'
+    digits = ['abcefg', 'cf', 'acdeg', 'acdfg', 'bcdf', 'abdfg', 'abdefg', 'acf', 'abcdefg', 'abcdfg']
     sorted_digits = sorted(digits)
     for line in input:
-        input_v, output_v = line.split(" | ")
+        input_v, output_v = line.split(' | ')
         for perm in permutations(possible_letters):
             letters_mutation = {i: j for i, j in zip(perm, possible_letters)}
-            input_mutation = ["".join(sorted(map(letters_mutation.get, word))) for word in input_v.split()]
+            input_mutation = [''.join(sorted(map(letters_mutation.get, word))) for word in input_v.split()]
             if sorted_digits == sorted(input_mutation):
-                output_mutation = ["".join(sorted(map(letters_mutation.get, word))) for word in output_v.split()]
-                score += int("".join(str(digits.index(word)) for word in output_mutation))
+                output_mutation = [''.join(sorted(map(letters_mutation.get, word))) for word in output_v.split()]
+                score += int(''.join(str(digits.index(word)) for word in output_mutation))
     return score
 
 input = read_input(8)
