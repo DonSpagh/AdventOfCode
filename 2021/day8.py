@@ -1,4 +1,4 @@
-from itertools import *
+from itertools import permutations
 
 def read_input(day):
     with open(f'inputs/day{day}.txt', 'r') as f:
